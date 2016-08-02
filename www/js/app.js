@@ -29,13 +29,15 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services',
     $scope.temp_type;
     
     //Personal Preferences
-    $scope.personal_warm;
+    $scope.personal_warm = 99;
     $scope.personal_warmer;
     $scope.personal_hot;
     $scope.personal_steaming;
     
     $scope.save = function(){
+        console.log($scope.personal_warm);
         Settings.warm = $scope.personal_warm;
+        console.log(Settings.warm);
         Settings.warmer = $scope.personal_warmer;
         Settings.hot = $scope.personal_hot;
         Settings.steaming = $scope.personal_steaming;
@@ -61,6 +63,7 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services',
     
     //Setting and Temperature - changes temp in input based on preset value and temp type
     $scope.set_temp = function(){
+        console.log(Settings.warm);
         switch($scope.heat){
                 case "Warm":
                     $scope.temp = Settings.warm;
@@ -131,6 +134,7 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services',
         }
     };
     */
+    
     return {
       warm: 99,
       warmer: 110,
