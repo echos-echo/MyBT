@@ -1,6 +1,7 @@
 <ion-view title="Settings" hide-back-button="true" id="page4" style="background-color:#FCFCFC;" class=" ">
     <ion-content padding="true" class="has-header">
         <form id="settings-form2" class="list ">
+<!--
             <label class="item item-select " id="settings-select2">
                 <span class="input-label" ng-model = "temp_type" ng-change = "change_temptype()">Temperature Type</span>
                 <select>
@@ -8,6 +9,7 @@
                     <option>Celsius</option>
                 </select>
             </label>
+-->
             <!--<ion-toggle toggle-class="toggle-assertive" id="settings-toggle6" class=" ">Preset Temperatures</ion-toggle> -->
         </form>
         <h4 style = "font-weight:300; text-align:center;">
@@ -47,7 +49,7 @@
                 </form>
             </form>
         </form> 
-        <button id="save" class=" button button-assertive button-large button-block icon-left "  ng-click = "set_temp()">Save</button>
+        <button id="save" class=" button button-assertive button-large button-block icon-left "  ng-click = "save()">Save</button>
     
         <p id="settings-markdown3" style="color:#000000;text-align:center;" class=" ">
             <strong>Warning</strong>: No temperature lower than current temperature can be set.</p>

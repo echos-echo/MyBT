@@ -23,7 +23,7 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services',
 })
 
 
-.controller ("settings_controller", function($scope){
+.controller ("settings_controller", function($scope, Settings){
 
     //Setting
     $scope.temp_type;
@@ -33,6 +33,14 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services',
     $scope.personal_warmer;
     $scope.personal_hot;
     $scope.personal_steaming;
+    
+    $scope.save = function(){
+        Settings.warm = $scope.personal_warm;
+        Settings.warmer = $scope.personal_warmer;
+        Settings.hot = $scope.personal_hot;
+        Settings.steaming = $scope.personal_steaming;
+        
+    };
 
 })
 
@@ -40,6 +48,8 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services',
 
 
 .controller ("app_controller", function($scope, Settings){
+    
+    
     
     //Temperature
     $scope.temp = 72;
@@ -53,34 +63,19 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services',
     $scope.set_temp = function(){
         switch($scope.heat){
                 case "Warm":
-                if ($scope.temp_type == "Fahrenheit")
-                    $scope.temp = 99;
-                if ($scope.temp_type == "Celsius")
-                    $scope.temp = 37;
+                    $scope.temp = Settings.warm;
                 break;
                 case "Warmer":
-                if ($scope.temp_type == "Fahrenheit")
-                    $scope.temp = 110;
-                if ($scope.temp_type == "Celsius")
-                    $scope.temp = 43;
+                    $scope.temp = Settings.warmer;
                 break;
                 case "Hot":
-                if ($scope.temp_type == "Fahrenheit")
-                    $scope.temp = 120;
-                if ($scope.temp_type == "Celsius")
-                    $scope.temp = 49;
+                    $scope.temp = Settings.hot;
                 break;
                 case "Steaming":
-                if ($scope.temp_type == "Fahrenheit")
-                    $scope.temp = 200;
-                if ($scope.temp_type == "Celsius")
-                    $scope.temp = 93;
+                    $scope.temp = Settings.steaming;
                 break;
                 case "Boiling":
-                if ($scope.temp_type == "Fahrenheit")
-                    $scope.temp = 212;
-                if ($scope.temp_type == "Celsius")
-                    $scope.temp = 100;
+                    $scope.temp = Settings.boiling;
                 break;   
         }
     }
@@ -115,7 +110,13 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services',
 
 
 .service("Settings", function(){
+    /*
     var _temp;
+    var _warm = 91;
+    var _warmer;
+    var _hot;
+    var _steaming;
+    var _temp_type;
     
     
     
@@ -129,8 +130,12 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services',
             alert("Temperature is out of range.");
         }
     };
-    
-    
-
-
+    */
+    return {
+      warm: 99,
+      warmer: 110,
+      hot: 120,
+      steaming:200,
+      boiling:212
+    };
 })
