@@ -1,0 +1,42 @@
+<ion-view title="Temperature" hide-back-button="true" id="page2" style="background-color:#FCFCFC;" class=" ">
+    <ion-content padding="true" class="has-header" ng-controller = "app_controller">
+        <h3 id="temperature-heading1" style="color:#CA0B0B;font-weight:300;text-align:center;" class=" ">Current Temperature:</h3>
+        <form id="temperature-form1" class="list ">
+            <h1 id="temperature-heading2" ng-model = "current_temp" style="color:#000000;font-weight:400;text-align:center;" class=" ">{{current_temp}}</h1>
+            <a ui-sref="tabsController.suggestions" id="temperature-button7" class=" button button-dark button-small button-block button-clear icon ion-ios-information-outline ">Temperature Guide</a>
+            <label class="item item-select " id="temperature-select1">
+                <span class="input-label">Select (Preset)</span>
+                <select id = "ddlViewBy" ng-model = "heat" ng-change = "set_temp()">
+                    <option> </option>
+                    <option>Warm</option>
+                    <option>Warmer</option>
+                    <option>Hot</option>
+                    <option>Steaming</option>
+                    <option>Boiling</option>
+                </select>
+            </label>
+            <!--<ion-item class="range range-positive " id="temperature-range1">Temperature
+                <ion-range pin="true"></ion-range>
+                <form name="tempValue">
+                    <script> set_temp(temp) </script>
+                    <input type="range" name="tempInputName" id="tempInputId" value=72 min="72" max="212" oninput="tempOutputId.value = tempInputId.value">
+                    <output name="tempOutputName" id="tempOutputId"> {{temp}}</output>
+                </form>
+            </ion-item> -->
+            <form action="action_page.php">
+               <h3 style = "font-weight:300; text-align:center;">
+                    Set Temperature
+               </h3>
+                <div class="temp">
+                <input type="number" name="quantity" ng-model = "temp" min="min" max="max" style = "font-size:30px" align = "middle" >
+                </div>
+                
+            </form>
+            
+        </form>
+        <button id="temperature-button1" class=" button button-assertive button-large button-block icon-left ion-ios-flame "  ng-click = "check_temp()">Begin Heating</button>
+        <div class="spacer" style="width: 300px; height: 55px;"></div>
+        <p id="temperature-markdown1" style="color:#000000;text-align:center;" class=" ">
+            <strong>Warning</strong>: No temperature lower than current temperature can be set.</p>
+    </ion-content>
+</ion-view>
