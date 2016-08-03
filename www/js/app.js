@@ -22,6 +22,32 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services',
   });
 })
 
+<<<<<<< HEAD
+.controller ("app_controller", function($scope){
+    
+    $scope.temp = 72;
+    $scope.heat = " ";
+    $scope.current_temp = 80;
+    $scope.warm_temp = document.getElementById("warm");
+    
+    
+    $scope.set_temp = function(){
+        switch($scope.heat){
+                case "Warm":
+                $scope.temp = 99;
+                break;
+                case "Warmer":
+                $scope.temp = 110;
+                break;
+                case "Hot":
+                $scope.temp = 120;
+                break;
+                case "Steaming":
+                $scope.temp = 200;
+                break;
+                case "Boiling":
+                $scope.temp = 212;
+=======
 
 .controller ("settings_controller", function($scope, Settings){
     $scope.settings = {
@@ -83,6 +109,7 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services',
                 break;
                 case "Boiling":
                     $scope.temp = Settings.boiling;
+>>>>>>> 0e0ce997e2ac896053645e1f987639df900e86a8
                 break;   
         }
     }
@@ -96,15 +123,21 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services',
 //            alert("Temperature is out of range.");
 //        }
 //    };
+<<<<<<< HEAD
+=======
     
     // Temp and Personal Pereferences - checks if user input is within range
+>>>>>>> 0e0ce997e2ac896053645e1f987639df900e86a8
     function check_range(){
         if(typeof $scope.temp == 'undefined'){
             alert("Temperature is out of range.");
         }
     };  
+<<<<<<< HEAD
+=======
     
     // Temp - checks that user input is not lower than current temp
+>>>>>>> 0e0ce997e2ac896053645e1f987639df900e86a8
     $scope.check_temp = function(){
         if($scope.current_temp > $scope.temp){
             alert("No temperature lower than current temperature can be set.");   
@@ -113,6 +146,15 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services',
             alert("Temperature is out of range.");
         }
     };
+<<<<<<< HEAD
+=======
+    
+<<<<<<< HEAD
+    
+    
+})
+=======
+>>>>>>> eve
 
 })
 
@@ -167,3 +209,4 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services',
       boiling:212
     };
 })
+>>>>>>> 0e0ce997e2ac896053645e1f987639df900e86a8
