@@ -1,6 +1,10 @@
 <ion-view title="Settings" hide-back-button="true" id="page4" style="background-color:#FCFCFC;" class=" ">
     <ion-content padding="true" class="has-header">
         <form id="settings-form2" class="list ">
+<<<<<<< HEAD
+=======
+<!--
+>>>>>>> 0e0ce997e2ac896053645e1f987639df900e86a8
             <label class="item item-select " id="settings-select2">
                 <span class="input-label" ng-model = "temp_type" ng-change = "change_temptype()">Temperature Type</span>
                 <select>
@@ -8,6 +12,7 @@
                     <option>Celsius</option>
                 </select>
             </label>
+<<<<<<< HEAD
             <!--<ion-toggle toggle-class="toggle-assertive" id="settings-toggle6" class=" ">Preset Temperatures</ion-toggle> -->
         </form>
         <a ui-sref="tabsController.personalPreferences" id="settings-button9" style="text-align:left;" class=" button button-assertive  button-block icon-right ion-ios-arrow-right ">Personal Preferences</a>
@@ -15,3 +20,52 @@
             <strong>Warning</strong>: No temperature lower than current temperature can be set.</p>
     </ion-content>
 </ion-view>
+=======
+-->
+            <!--<ion-toggle toggle-class="toggle-assertive" id="settings-toggle6" class=" ">Preset Temperatures</ion-toggle> -->
+        </form>
+        <h4 style = "font-weight:300; text-align:center;">
+                    Personal Preferences
+        </h4>
+        
+        <form id="personalPreferences-form6" class="list ">
+            
+            <ion-toggle toggle-class="toggle-positive" id="personalPreferences-toggle8" class=" " ng-model = "is_warm" >Warm </ion-toggle>
+            <label class="item item-input " id="personalPreferences-input2">
+                <span class="input-label" >Enter your preference:</span>
+                <input type="number" id = "warm" ng-disabled = "!is_warm" ng-model = "settings.personal_warm"/>
+                
+            </label>
+            
+            <form id="personalPreferences-form7" class="list ">
+                <ion-toggle toggle-class="toggle-positive" id="personalPreferences-toggle9" class=" " ng-model = "settings.is_warmer" >Warmer</ion-toggle>
+                <label class="item item-input " id="personalPreferences-input3">
+                    <span class="input-label">Enter your preference:</span>
+                    <input type="number" placeholder="" min="72" max="212" ng-disabled = "!is_warmer" ng-model = "settings.personal_warmer"/>
+                </label>
+                
+                <form id="personalPreferences-form8" class="list ">
+                    <ion-toggle toggle-class="toggle-positive" id="personalPreferences-toggle10" class=" " ng-model = "settings.is_hot" >Hot</ion-toggle>
+                    <label class="item item-input " id="personalPreferences-input4">
+                        <span class="input-label">Enter your preference:</span>
+                        <input type="number" placeholder="" min="72" max="212" ng-disabled = "!is_hot" ng-model = "settings.personal_hot"/>
+                    </label>
+                    
+                    <form id="personalPreferences-form9" class="list ">
+                        <ion-toggle toggle-class="toggle-positive" id="personalPreferences-toggle11" class=" " ng-model = "settings.is_steaming" >Steaming</ion-toggle>
+                        <label class="item item-input " id="personalPreferences-input5">
+                            <span class="input-label">Enter your preference:</span>
+                            <input type="number" placeholder="" min="72" max="212" ng-disabled = "!is_steaming" ng-model = "settings.personal_steaming"/>
+                        </label>
+                        
+                    </form>
+                </form>
+            </form>
+        </form> 
+        <button id="save" class=" button button-assertive button-large button-block icon-left "  ng-click = "save()">Save</button>
+    
+        <p id="settings-markdown3" style="color:#000000;text-align:center;" class=" ">
+            <strong>Warning</strong>: No temperature lower than current temperature can be set.</p>
+    </ion-content>
+</ion-view>
+>>>>>>> 0e0ce997e2ac896053645e1f987639df900e86a8
