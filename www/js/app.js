@@ -113,9 +113,10 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services',
             alert("Temperature is out of range.");
         }
     };
-    
 
 })
+
+// section end
 
 
 .service("Settings", function(){
