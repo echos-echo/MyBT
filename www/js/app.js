@@ -24,24 +24,23 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services',
 
 
 .controller ("settings_controller", function($scope, Settings){
-
-    //Setting
-    $scope.temp_type;
+    $scope.settings = {
+	personal_warm: 90,
+	personal_warmer: 95,
+	personal_hot: 100,
+	personal_steaming: 105
+    };
     
-    //Personal Preferences
-    $scope.personal_warm = 99;
-    $scope.personal_warmer;
-    $scope.personal_hot;
-    $scope.personal_steaming;
+    //Setting
+    // still used?
+    // $scope.temp_type;
+    
     
     $scope.save = function(){
-        console.log($scope.personal_warm);
-        Settings.warm = $scope.personal_warm;
-        console.log(Settings.warm);
-        Settings.warmer = $scope.personal_warmer;
-        Settings.hot = $scope.personal_hot;
-        Settings.steaming = $scope.personal_steaming;
-        
+        Settings.warm = $scope.settings.personal_warm;
+        Settings.warmer = $scope.settings.personal_warmer;
+        Settings.hot = $scope.settings.personal_hot;
+        Settings.steaming = $scope.settings.personal_steaming;
     };
 
 })
