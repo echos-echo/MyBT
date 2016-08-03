@@ -25,15 +25,16 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services',
 
 .controller ("settings_controller", function($scope, Settings){
     $scope.settings = {
-	personal_warm: 90,
-	personal_warmer: 95,
-	personal_hot: 100,
-	personal_steaming: 105
+	personal_warm: 99,
+	personal_warmer: 110,
+	personal_hot: 120,
+	personal_steaming: 200
     };
     
     //Setting
     // still used?
     // $scope.temp_type;
+
     
     
     $scope.save = function(){
@@ -41,6 +42,11 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services',
         Settings.warmer = $scope.settings.personal_warmer;
         Settings.hot = $scope.settings.personal_hot;
         Settings.steaming = $scope.settings.personal_steaming;
+        Settings.check_range1(Settings.warm);
+        Settings.check_range2(Settings.warmer);
+        Settings.check_range3(Settings.hot);
+        Settings.check_range4(Settings.steaming);
+        
     };
 
 })
@@ -62,7 +68,6 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services',
     
     //Setting and Temperature - changes temp in input based on preset value and temp type
     $scope.set_temp = function(){
-        console.log(Settings.warm);
         switch($scope.heat){
                 case "Warm":
                     $scope.temp = Settings.warm;
@@ -112,29 +117,46 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services',
 
 
 .service("Settings", function(){
-    /*
-    var _temp;
-    var _warm = 91;
-    var _warmer;
-    var _hot;
-    var _steaming;
-    var _temp_type;
     
+//    var _temp;
+//    var _warm = 91;
+//    var _warmer;
+//    var _hot;
+//    var _steaming;
+//    var _temp_type;
+//    
+//    
+//    
+//    
+//    var get_temp = function(temp){
+//        _temp = temp;
+//    };
     
+
     
-    
-    var get_temp = function(temp){
-        _temp = temp;
-    };
-    
-    var check_range = function(){
-        if(typeof $scope.temp == 'undefined'){
-            alert("Temperature is out of range.");
-        }
-    };
-    */
     
     return {
+        check_range1 : function(warm){
+            if(typeof warm == 'undefined'){
+                alert("Temperature is out of range.");
+            }
+       
+        },
+        check_range2 : function(warmer){
+            if(typeof warmer == 'undefined'){
+                alert("Temperature is out of range.");
+            }
+        },
+        check_range3 : function(hot){
+            if(typeof hot == 'undefined'){
+                alert("Temperature is out of range.");
+            }
+        },
+        check_range4 : function(steaming){
+            if(typeof steaming == 'undefined'){
+                alert("Temperature is out of range.");
+            }
+        },
       warm: 99,
       warmer: 110,
       hot: 120,
