@@ -1,0 +1,17 @@
+<ion-view title="Settings" hide-back-button="true" id="page4" style="background-color:#FCFCFC;" class=" ">
+    <ion-content padding="true" class="has-header">
+        <form id="settings-form2" class="list ">
+            <label class="item item-select " id="settings-select2">
+                <span class="input-label" ng-model = "temp_type" ng-change = "change_temptype()">Temperature Type</span>
+                <select>
+                    <option>Fahrenheit</option>
+                    <option>Celsius</option>
+                </select>
+            </label>
+            <!--<ion-toggle toggle-class="toggle-assertive" id="settings-toggle6" class=" ">Preset Temperatures</ion-toggle> -->
+        </form>
+        <a ui-sref="tabsController.personalPreferences" id="settings-button9" style="text-align:left;" class=" button button-assertive  button-block icon-right ion-ios-arrow-right ">Personal Preferences</a>
+        <p id="settings-markdown3" style="color:#000000;text-align:center;" class=" ">
+            <strong>Warning</strong>: No temperature lower than current temperature can be set.</p>
+    </ion-content>
+</ion-view>
