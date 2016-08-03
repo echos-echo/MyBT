@@ -109,7 +109,9 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services',
         if($scope.current_temp > $scope.temp){
             alert("No temperature lower than current temperature can be set.");   
         }
-        check_range();
+        if(typeof $scope.temp == 'undefined'){
+            alert("Temperature is out of range.");
+        }
     };
     
 
