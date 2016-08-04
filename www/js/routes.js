@@ -25,11 +25,7 @@ angular.module('app.routes', [])
     views: {
       'tab3': {
         templateUrl: 'templates/settings.html',
-<<<<<<< HEAD
-        controller: 'settingsCtrl'
-=======
         controller: 'settings_controller'
->>>>>>> 0e0ce997e2ac896053645e1f987639df900e86a8
       }
     }
   })
@@ -50,17 +46,6 @@ angular.module('app.routes', [])
     }
   })
 
-<<<<<<< HEAD
-  .state('tabsController.personalPreferences', {
-    url: '/page6',
-    views: {
-      'tab3': {
-        templateUrl: 'templates/personalPreferences.html',
-        controller: 'personalPreferencesCtrl'
-      }
-    }
-  })
-=======
 //  .state('tabsController.personalPreferences', {
 //    url: '/page6',
 //    views: {
@@ -70,7 +55,6 @@ angular.module('app.routes', [])
 //      }
 //    }
 //  })
->>>>>>> 0e0ce997e2ac896053645e1f987639df900e86a8
 
 $urlRouterProvider.otherwise('/page1/page2')
 
