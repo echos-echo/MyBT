@@ -30,11 +30,12 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services',
 	personal_hot: 120,
 	personal_steaming: 200
     };
+    $scope.is_on = false;
     
     //Setting
     // still used?
     // $scope.temp_type;
-
+    
     
     
     $scope.save = function(){
