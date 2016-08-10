@@ -1,8 +1,7 @@
 
-document.addEventListener("deviceready", onDeviceReady, false);
+document.addEventListener("deviceready", onDeviceReady);
 
 var ad;
-
 
 function onDeviceReady() {
     bluetoothle.initialize(

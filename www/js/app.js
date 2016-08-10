@@ -30,7 +30,8 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services',
 	personal_hot: 120,
 	personal_steaming: 200
     };
-    $scope.is_on = false;
+    //$scope.is_on;
+    //bluetoothle.isEnabled(is_on);
     
     //Setting
     // still used?
@@ -47,6 +48,8 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services',
         Settings.check_range2(Settings.warmer);
         Settings.check_range3(Settings.hot);
         Settings.check_range4(Settings.steaming);
+        
+        console.log(is_on);
         
     };
 
